@@ -3,8 +3,6 @@ import { getEspisodeList } from "./services/getEpisodeList.js"
 
 const ID = "2993"
 const show = await getShowData(ID)
-console.log(show.name)
-
 const header = document.querySelector("header")
 
 header.setHTMLUnsafe(/* html */ `
@@ -16,7 +14,9 @@ const episodes = document.querySelector(".episodes")
 
 // Cada episodio
 const createEpisodeHTML = (episode, number) => /* html */ (
-    episode.map((data) => /* html */`<div class="episode episode-${data.number} rating-${Math.floor(data.rating)}">${data.rating}</div>`).join("")
+    episode.map((data) => /* html */`<div class="episode episode-${data.number} rating-${Math.floor(data.rating)}">
+        ${data.rating ? data.rating : ""}
+    </div>`).join("")
 )
 // Cada temporada (data = array de episodios, number = temporada)
 const createSeasonHTML = (data, number) =>  ( /* html */`

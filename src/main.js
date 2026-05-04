@@ -5,6 +5,13 @@ const ID = "2993"
 const show = await getShowData(ID)
 const header = document.querySelector("header")
 
+if(show == null){
+    header.setHTMLUnsafe(/* html */ `
+        <img src="" alt="No se pudo cargar la imagen">
+        <h1>No se pudo cargar el contenido</h1>`
+    )
+}
+
 header.setHTMLUnsafe(/* html */ `
     <img src=${show.image} alt=${show.name}>
     <h1>${show.name}</h1>`

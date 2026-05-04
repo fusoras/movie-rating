@@ -12,5 +12,22 @@ header.setHTMLUnsafe(/* html */ `
     <h1>${show.name}</h1>`
 )
 
-const episodes = await getEspisodeList(ID)
-console.log(episodes)
+const episodes = document.querySelector(".episodes")
+
+// Cada episodio
+const createEpisodeHTML = (episode, number) => /* html */ (
+    episode.map((data) => /* html */`<div class="episode episode-${data.number} rating-${number - 1}">${data.rating}</div>`).join("")
+)
+// Cada temporada (data = array de episodios, number = temporada)
+const createSeasonHTML = (data, number) =>  ( /* html */`
+    <article class="season">
+        <header class="season-header">T${number}</header>
+        ${createEpisodeHTML(data, number)}
+    </article>
+`)
+
+const seasons = await getEspisodeList(ID)
+
+// Recorre cada temporada y llama a createSeasonHTML
+const list = await Object.values(seasons).map((season, index) => createSeasonHTML(season, index + 1));
+episodes.setHTMLUnsafe(list.join(""))

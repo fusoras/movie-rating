@@ -34,8 +34,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-        - name: Instalar Bun
-          uses: oven-sh/setup-bun@v1
+      - name: Instalar Bun
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          echo "$HOME/.bun/bin" >> $GITHUB_PATH
       - name: Instalar dependencias
         run: bun install
       - name: Construir

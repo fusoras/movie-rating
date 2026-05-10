@@ -1,18 +1,17 @@
-const PLACEHOLDER_IMAGE = "https://placehold.co/210x295"
+const PLACEHOLDER_IMAGE = "https://placehold.co/210x295";
 
 export const getShowData = async (id) => {
-    const URL = `https://api.tvmaze.com/shows/${id}`
-    try {
-        const data = await fetch(URL).then(res => res.json())
+  const URL = `https://api.tvmaze.com/shows/${id}`;
+  try {
+    const data = await fetch(URL).then((res) => res.json());
 
-        return {
-            name: data.name,
-            rating: data.rating,
-            image: data.image?.medium ?? PLACEHOLDER_IMAGE
-        }
-    } catch(error){
-        return null
-    }
-
-}
-
+    return {
+      name: data.name,
+      rating: data.rating,
+      image: data.image?.medium ?? PLACEHOLDER_IMAGE,
+    };
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};

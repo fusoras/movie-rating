@@ -20,7 +20,7 @@ header.setHTMLUnsafe(/* html */ `
 const episodes = document.querySelector(".episodes")
 
 // Cada episodio
-const createEpisodeHTML = (episode, number) => /* html */ (
+const createEpisodeHTML = (episode) => /* html */ (
     episode.map((data) => /* html */`<div class="episode episode-${data.number} rating-${Math.floor(data.rating)}">
         ${data.rating ? data.rating : ""}
     </div>`).join("")

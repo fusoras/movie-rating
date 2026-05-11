@@ -1,0 +1,7 @@
+[install]
+
+# ***** Minimum age config *****
+# only install package versions published at least 2 days ago
+minimumReleaseAge = 172800 # seconds
+# exclude trusted packages from the age gate
+minimumReleaseAgeExcludes = ["@types/node", "typescript", "svelte", "react", "react-dom"]

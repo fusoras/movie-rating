@@ -12,7 +12,7 @@ if (show == null) {
 }
 
 header.setHTMLUnsafe(/* html */ `
-    <img src=${show.image} alt=${show.name}>
+    <img src=${show.image} alt=${show.name} class="cover">
     <h1>${show.name}</h1>`);
 
 const episodes = document.querySelector(".episodes");

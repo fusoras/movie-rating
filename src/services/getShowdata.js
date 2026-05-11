@@ -1,7 +1,7 @@
-const PLACEHOLDER_IMAGE = "https://placehold.co/210x295";
+import { API_MOVIE, PLACEHOLDER_IMAGE } from "../config";
 
 export const getShowData = async (id) => {
-  const URL = `https://api.tvmaze.com/shows/${id}`;
+  const URL = `${API_MOVIE}${id}`;
   try {
     const data = await fetch(URL).then((res) => res.json());
 

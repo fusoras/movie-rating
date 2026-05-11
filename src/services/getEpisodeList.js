@@ -1,5 +1,7 @@
+import { API_MOVIE } from "../config";
+
 export const getEspisodeList = async (id) => {
-  const URL = `https://api.tvmaze.com/shows/${id}/episodes`;
+  const URL = `${API_MOVIE}${id}/episodes`;
   const episodes = await fetch(URL).then((res) => res.json());
 
   const episodeList = episodes.map((episode) => ({

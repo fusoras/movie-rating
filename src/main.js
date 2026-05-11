@@ -1,7 +1,7 @@
 import { getShowData } from "./services/getShowdata.js";
 import { getEspisodeList } from "./services/getEpisodeList.js";
+import { ID } from "./config.js";
 
-const ID = "2993";
 const show = await getShowData(ID);
 const header = document.querySelector("header");
 

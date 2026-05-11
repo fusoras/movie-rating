@@ -4,6 +4,7 @@ Create with Vite
 # Install
 ```bash
 git clone https://github.com/fusoras/movie-rating.git --depth=1
+```
 ```bash
 cd movie-rating
 ```
